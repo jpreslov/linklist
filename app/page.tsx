@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-// import styles from './page.module.css'
+import styles from './page.module.css'
 import LinkBtn from './(components)/LinkBtn'
 
 import { Noto_Sans } from 'next/font/google'
@@ -15,10 +15,6 @@ const notoSans = Noto_Sans({
 })
 
 export default function Home() {
-  const bgImage = () => {
-
-  }
-
   const links: { name: string, url: string }[] = [
     {
       name: 'Bandcamp',
@@ -40,6 +36,8 @@ export default function Home() {
       className='flex flex-col content-center justify-center w-screen h-screen align-middle'
     >
       <span id='shapes'>
+        <Image id='light' src={lightFx} alt='fx' />
+        <Image id='light2' src={lightFx} alt='fx' />
         <span id='rhombus'>
           <p id='alien'>
             👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
@@ -58,13 +56,6 @@ export default function Home() {
         >
           anosmia
         </h1>
-      </div>
-      <div
-        className='flex flex-row h-[70px] justify-center m-5 text-center'
-      >
-        {/* <p className='text-4xl' style={{ transform: '1s' }}>
-          👾
-        </p> */}
       </div>
       <div className='flex justify-center align-middle h-1/2'>
         <div className='flex flex-col p-3 justify-center w-3/4 max-w-[700px] rounded-lg backdrop-blur-xl backdrop-brightness-110 border-2 border-opacity-30'>
