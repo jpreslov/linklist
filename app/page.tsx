@@ -5,6 +5,8 @@ import LinkBtn from './(components)/LinkBtn'
 
 import { Noto_Sans } from 'next/font/google'
 
+import lightFx from '../public/lightleak.jpg'
+
 const inter = Inter({ subsets: ['latin'] })
 
 const notoSans = Noto_Sans({
@@ -13,6 +15,10 @@ const notoSans = Noto_Sans({
 })
 
 export default function Home() {
+  const bgImage = () => {
+
+  }
+
   const links: { name: string, url: string }[] = [
     {
       name: 'Bandcamp',
@@ -30,9 +36,17 @@ export default function Home() {
 
   return (
     <main
-      className='w-screen h-screen flex flex-col bg-indigo-950 justify-center align-middle content-center'
+      id='main'
+      className='flex flex-col content-center justify-center w-screen h-screen align-middle'
     >
-      <div className='inline w-screen top-0 fixed h-[6em] text-center'>
+      <span id='shapes'>
+        <span id='rhombus'>
+          <p id='alien'>
+            👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
+          </p>
+        </span>
+      </span>
+      <div className='w-screen inline top-0 fixed h-[6em] text-center'>
         <h1
           className={notoSans.className}
           style={{
@@ -46,17 +60,14 @@ export default function Home() {
         </h1>
       </div>
       <div
-        className='w-screen flex flex-row h-[70px] justify-center m-5 text-center'
+        className='flex flex-row h-[70px] justify-center m-5 text-center'
       >
-        <p
-          className='w-screen text-4xl'
-          style={{ transform: '1s' }}
-        >
+        {/* <p className='text-4xl' style={{ transform: '1s' }}>
           👾
-        </p>
+        </p> */}
       </div>
       <div className='flex justify-center align-middle h-1/2'>
-        <div className='flex flex-col p-4 justify-center w-3/4 max-w-[700px] border-white rounded-lg border-2'>
+        <div className='flex flex-col p-3 justify-center w-3/4 max-w-[700px] rounded-lg backdrop-blur-xl backdrop-brightness-110 border-2 border-opacity-30'>
           {
             links.map((link, id) => {
               return (
