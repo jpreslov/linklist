@@ -12,6 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 const notoSans = Noto_Sans({
   subsets: ['latin'],
   weight: '900',
+  variable: '--noto'
 })
 
 export default function Home() {
@@ -35,29 +36,21 @@ export default function Home() {
       id='main'
       className='flex flex-col content-center justify-center w-screen h-screen align-middle'
     >
-      <span id='shapes'>
-        <Image id='light' src={lightFx} alt='fx' />
-        <Image id='light2' src={lightFx} alt='fx' />
-        <span id='rhombus'>
-          <p id='alien'>
+      <span className={styles.shapes}>
+        <Image className={styles.light} src={lightFx} alt='fx' />
+        <Image className={styles.light2} src={lightFx} alt='fx' />
+        <span className={styles.rhombus}>
+          <p className={styles.alien}>
             👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾👾
           </p>
         </span>
       </span>
-      <div className='w-screen inline top-0 fixed h-[6em] text-center'>
-        <h1
-          className={notoSans.className}
-          style={{
-            fontSize: '90px',
-            letterSpacing: '-11px',
-            color: 'white',
-            backgroundBlendMode: 'screen'
-          }}
-        >
+      <div className={styles.headerContainer}>
+        <h1 className={`${notoSans.className} ${styles.headerText}`}>
           anosmia
         </h1>
       </div>
-      <div className='flex justify-center align-middle h-1/2'>
+      <div className='flex justify-center align-middle lg:h-1/2'>
         <div className='flex flex-col p-3 justify-center w-3/4 max-w-[700px] rounded-lg backdrop-blur-xl backdrop-brightness-110 border-2 border-opacity-30'>
           {
             links.map((link, id) => {
